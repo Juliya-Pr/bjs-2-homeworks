@@ -13,10 +13,6 @@ function solveEquation(a, b, c) {
 }
 
 //задача №2
-// let percentPlaceholder = percent.getAttribute('placeholder');
-// let contributionPlaceholder = contribution.getAttribute('placeholder');
-// let amountPlaceholder = amount.getAttribute('placeholder');
-
 function calculateTotalMortgage(percent, contribution, amount, date) {
   let totalAmount = [];
 
@@ -30,7 +26,6 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     //Number(amount);
     return(`Параметр "Общая стоимость" содержит неправильное значение "${amount}"`);
   }
-
   let s = amount - contribution; //тело кредита
   const dateNow = new Date(); //текущая дата
   let n = Math.ceil(((date - dateNow)/1000/60/60/24/30.5)); //разница между датами в мс и пересчет в месяцы
@@ -38,7 +33,6 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   let k = s * (p + (p / (((1 + p)**n) - 1)));
   let r = Number((k * n).toFixed(2));
   console.log(r);
-  return(r);
 
-  return totalAmount;
+  return r;
 }
