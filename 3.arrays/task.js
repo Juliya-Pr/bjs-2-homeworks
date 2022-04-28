@@ -1,11 +1,11 @@
 function compareArrays(arr1, arr2) {
-  let result = arr1.every((item, idx) => (arr1.item === arr2.item) && (arr1.length === arr2.length) && arr1[idx] === arr2[idx]);
+  return (arr1.length === arr2.length) && arr1.every((item) => arr1[item] === arr2[item]);
 
-  return result; // boolean
+   // boolean
 }
 
 function advancedFilter(arr) {
-  let resultArr = arr.filter((item) => item > 0).filter((item) => item % 3 === 0).map((item) => item * 10);
+  return arr.filter((item) => item > 0).filter((item) => item % 3 === 0).map((item) => item * 10);
 
-  return resultArr; // array
+  // array
 }
