@@ -6,30 +6,31 @@ function Student(name, gender, age) {
 }
 
 Student.prototype.setSubject = function (subjectName) {
-  student1.subjectName = 'Algebra';
-  this.subjectName = 'Geometry';
+  this.subject = subjectName;
 }
 
 Student.prototype.addMark = function (mark) {
   if(this.marks === undefined){
-    student1.mark = 5;
-    this.mark = 2;
+    this.marks = [mark];
   } else {
-    push.student1.mark = 4;
-    push.this.mark = 3;
+    this.marks.push(mark);
   }
 }
 
-Student.prototype.addMarks = function (mark1, mark2, mark3, ...rest) {
-  student1.mark = [5, 4, 5];
-  this.mark = [2, 3, 2];
-
+Student.prototype.addMarks = function (mark1,mark2,mark3, ...marks) {
+	this.marks.push(...marks)
 }
 
 Student.prototype.getAverage = function () {
-
+  let sum = 0;
+  for (let mark of this.marks) {
+    sum += mark;
+  }
+  return sum/this.marks.length;
 }
 
 Student.prototype.exclude = function (reason) {
-
+  delete this.subject;
+  delete this.marks;
+  this.excluded = reason;
 }
