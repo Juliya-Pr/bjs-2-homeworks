@@ -17,7 +17,7 @@ Student.prototype.addMark = function (mark) {
   }
 }
 
-Student.prototype.addMarks = function (mark1,mark2,mark3, ...marks) {
+Student.prototype.addMarks = function (...marks) {
 	this.marks.push(...marks)
 }
 
